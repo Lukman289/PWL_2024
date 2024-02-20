@@ -62,18 +62,24 @@ Route::get('/', function () {
 //     //
 // }) -> name('profile');
 
-Route::get('/hello', [WelcomeController::class,'hello']);
+// Route::get('/hello', [WelcomeController::class,'hello']);
 
-Route::get('/', [HomeController::class,'index']);
+// Route::get('/', [HomeController::class,'index']);
 
-Route::get('/about', [AboutController::class,'about']);
+// Route::get('/about', [AboutController::class,'about']);
 
-Route::get('/articles/{id}', [PageController::class,'articles']);
+// Route::get('/articles/{id}', [PageController::class,'articles']);
 
-Route::resource('/photos', PhotoController::class) -> only ([
-    'index', 'show'
-]);
+// Route::resource('/photos', PhotoController::class) -> only ([
+//     'index', 'show'
+// ]);
 
-Route::resource('/photos', PhotoController::class) -> except ([
-    'create', 'store', 'update', 'destroy'
-]);
+// Route::resource('/photos', PhotoController::class) -> except ([
+//     'create', 'store', 'update', 'destroy'
+// ]);
+
+// Route::get('/greeting', function() {
+//     return view('blog.hello', ['name' => 'Lukman']);
+// });
+
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
